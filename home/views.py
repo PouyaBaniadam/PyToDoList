@@ -99,8 +99,5 @@ def filter_tasks(request, status):
     if status == "completed":
         what_is_active = "completed"
 
-    else:
-        what_is_active = "pending"
-
     return render(request, template_name="home/index.html",
                   context={"tasks": filtered_tasks, 'form': form, "what_is_active": what_is_active})
