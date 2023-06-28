@@ -43,7 +43,7 @@
 
             <a href="{% url 'account:leave' %}">
                 <div>
-                    <button class="btn btn-outline-primary btn-submit" type="submit" id="login-button">
+                    <button class="btn btn-outline-primary" type="submit" id="login-button">
                         <i class="bi bi-dash-circle-dotted"></i>
                         Leave
                         <i class="bi bi-dash-circle-dotted"></i>
@@ -412,9 +412,19 @@
 
             {{ form.non_field_errors }}
 
+            <p style="color: #0d6efd; margin-bottom: -5px">
+                {{ form.date.label }}
+            </p>
             {{ form.date }}
 
+            <p style="color: #0d6efd; margin-bottom: -5px">
+                {{ form.time.label }}
+            </p>
             {{ form.time }}
+
+            <p style="color: #0d6efd; margin-bottom: -5px">
+                {{ form.task.label }}
+            </p>
 
             {{ form.task.errors }}
             {{ form.task }}
