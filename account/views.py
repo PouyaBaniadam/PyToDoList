@@ -27,12 +27,16 @@ def join(request):
             email_for_register = register_form.cleaned_data.get('email_for_register')
             password_for_register = register_form.cleaned_data.get('password_for_register')
 
-            user = User.objects.create_user(username=username_for_register, password=password_for_register,
-                                            email=email_for_register)
-            login(request, user)
-            Profile.objects.create(username=request.user, username_label=request.user.username,
-                                   email=email_for_register, password=password_for_register)
-            return redirect("home:home")
+            try:
+
+                user = User.objects.create_user(username=username_for_register, password=password_for_register,
+                                                email=email_for_register)
+                login(request, user)
+                Profile.objects.create(username=request.user, username_label=request.user.username,
+                                       email=email_for_register, password=password_for_register)
+                return redirect("home:home")
+            except:
+                register_form.add_error(field="username_for_register", error="This username has been already taken!")
 
     # Login logic
     if request.method == "POST" and request.POST.get("username_for_login"):

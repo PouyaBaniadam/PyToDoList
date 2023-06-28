@@ -137,7 +137,7 @@ a.filter-choice.active {
 
 .tasks {
     margin-top: 1px;
-    max-height: 350px;
+    max-height: 200px;
     overflow-y: auto;
 }
 
@@ -343,3 +343,7 @@ a.filter-choice.active {
     flex-direction: column;
 }
 
+
+.btn-submit {
+    box-shadow: 10px 10px 10px #00234AFF;
+}
