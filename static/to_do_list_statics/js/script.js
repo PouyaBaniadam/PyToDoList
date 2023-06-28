@@ -27,3 +27,5 @@ function updateDate() {
 
 setInterval(updateTime, 10);
 setInterval(updateDate, 10);
+
+// Powered by PouyaLj
