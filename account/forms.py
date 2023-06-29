@@ -18,7 +18,7 @@ allowed_characters.append("|")
 class RegisterForm(forms.Form):
     username_for_register = forms.CharField(
         widget=forms.TextInput(
-            attrs={"placeholder": "Username", "style": "font-size:20px; margin-bottom: -5px"}))
+            attrs={"placeholder": "Username", "style": "font-size:20px; margin-bottom: -5px", 'oninput': 'this.value = this.value.toLowerCase()'}))
     email_for_register = forms.EmailField(
         widget=forms.EmailInput(
             attrs={"placeholder": "Email", "style": "font-size:20px; margin-bottom: -5px"}))
