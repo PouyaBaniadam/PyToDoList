@@ -86,7 +86,7 @@ class RegisterForm(forms.Form):
 class LoginForm(forms.Form):
     username_for_login = forms.CharField(
         widget=forms.TextInput(
-            attrs={"placeholder": "Username", "style": "font-size:20px"}))
+            attrs={"placeholder": "Username", "style": "font-size:20px", 'oninput': 'this.value = this.value.toLowerCase()'}))
     password_for_login = forms.CharField(
         widget=forms.PasswordInput(
             attrs={"placeholder": "password", "style": "font-size:20px"}))
